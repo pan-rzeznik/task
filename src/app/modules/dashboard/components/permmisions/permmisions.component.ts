@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-permmisions',
   templateUrl: './permmisions.component.html',
-  styleUrls: ['./permmisions.component.scss']
+  styleUrls: ['./permmisions.component.scss'],
 })
-export class PermmisionsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class PermmisionsComponent {}
