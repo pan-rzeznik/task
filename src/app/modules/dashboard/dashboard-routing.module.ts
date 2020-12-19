@@ -1,4 +1,7 @@
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { PermmisionsComponent } from './components/permmisions/permmisions.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
 import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -15,19 +18,19 @@ const routes: Routes = [
     children: [
       {
         path: 'users-list',
-        component: SidenavComponent,
+        component: UsersListComponent,
       },
       {
         path: 'user-edit',
-        component: SidenavComponent,
+        component: UserEditComponent,
       },
       {
         path: 'permmisions',
-        component: SidenavComponent,
+        component: PermmisionsComponent,
       },
       {
         path: 'settings',
-        component: SidenavComponent,
+        component: SettingsComponent,
       },
     ],
   },

@@ -1,21 +1,31 @@
 @import "/src/mixins.scss";
 
 :host {
-  border: 1px solid #dddddd;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
-
   .top-bar {
     display: flex;
     justify-content: space-between;
-
+    border: 1px solid #dddddd;
+    border-left: none;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.16);
+    height: 60px;
     .data {
       display: flex;
 
+      .sidenav-button {
+        border-right: 1px solid #dddddd;
+        height: 100%;
+        @include flex-center;
+        width: 60px;
+        cursor: pointer;
+        img {
+          height: 20px;
+        }
+      }
       &-box {
         @include flex-center;
         flex-direction: column;
         width: 120px;
-        height: 60px;
+        height: 100%;
         border-right: 1px solid #dddddd;
 
         .name {

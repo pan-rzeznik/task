@@ -4,4 +4,10 @@ html * {
   margin: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+
+  button {
+    background-color: unset;
+    border: none;
+    outline: none;
+  }
 }
