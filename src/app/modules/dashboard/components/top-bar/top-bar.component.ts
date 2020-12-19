@@ -10,7 +10,7 @@ export enum SidenavState {
   styleUrls: ['./top-bar.component.scss'],
 })
 export class TopBarComponent {
-  sidenavSate = SidenavState.close;
+  sidenavSate = SidenavState.open;
   @Output() sidenavToggle = new EventEmitter<SidenavState>();
 
   constructor() {}

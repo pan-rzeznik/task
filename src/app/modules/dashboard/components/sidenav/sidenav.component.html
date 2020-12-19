@@ -5,18 +5,38 @@
     <div class="year">2020</div>
   </div>
   <nav>
+    <span class="list-name"
+      ><img src="../../../../../assets/icons/Icons_warsztat_ico.svg" />
+      Users</span
+    >
     <ul>
-      <li class="menu-item">
-        <a [routerLink]="['users-list']">User List</a>
+      <li
+        class="menu-item"
+        [routerLink]="['users-list']"
+        routerLinkActive="active"
+      >
+        User List
       </li>
-      <li class="menu-item">
-        <a [routerLink]="['user-edit']">User Edit</a>
+      <li
+        class="menu-item"
+        [routerLink]="['user-edit']"
+        routerLinkActive="active"
+      >
+        User Edit
       </li>
-      <li class="menu-item">
-        <a [routerLink]="['permmisions']">Roles and Permissions</a>
+      <li
+        class="menu-item"
+        [routerLink]="['permmisions']"
+        routerLinkActive="active"
+      >
+        Roles and Permissions
       </li>
-      <li class="menu-item">
-        <a [routerLink]="['settings']">Settings</a>
+      <li
+        class="menu-item"
+        [routerLink]="['settings']"
+        routerLinkActive="active"
+      >
+        Settings
       </li>
     </ul>
   </nav>

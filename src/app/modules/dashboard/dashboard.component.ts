@@ -8,7 +8,7 @@ import { SidenavState } from './components/top-bar/top-bar.component';
 })
 export class DashboardComponent {
   sidenavSateEnum = SidenavState;
-  sidenavSate = SidenavState.close;
+  sidenavSate = SidenavState.open;
 
   constructor() {}
   sidenavToggle(): void {
