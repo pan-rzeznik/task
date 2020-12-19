@@ -1,0 +1,12 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 276px 1fr;
+  grid-template-rows: 60px 1fr;
+
+  app-sidenav {
+    grid-column: 1/2;
+    grid-row: 1/-1;
+  }
+}
