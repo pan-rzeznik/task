@@ -4,6 +4,7 @@ import {
   ViewChild,
   EventEmitter,
   Renderer2,
+  OnInit,
 } from '@angular/core';
 import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
@@ -13,7 +14,7 @@ import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
   styleUrls: ['./user-edit.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserEditComponent {
+export class UserEditComponent implements OnInit {
   tableContent = ['Script', 'Props', 'Scenes', 'Money', 'Stunts'];
   form: FormGroup;
 
@@ -41,6 +42,7 @@ export class UserEditComponent {
     this.renderer.setStyle(fakeSubmit, 'opacity', 0);
     this.renderer.setStyle(fakeSubmit, 'width', 0);
     this.renderer.setStyle(fakeSubmit, 'height', 0);
+    this.renderer.setStyle(fakeSubmit, 'position', 'absolute');
     this.renderer.appendChild(this.formElement['nativeElement'], fakeSubmit);
     const listener = this.renderer.listen(
       this.formElement['nativeElement'],
