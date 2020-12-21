@@ -5,7 +5,7 @@
   </div>
   <div class="buttons-container">
     <app-button [color]="'delete'">DELETE</app-button>
-    <app-button [color]="'block'">BLOCK</app-button>
+    <app-button [color]="'block'" (click)="confirmDialog()">BLOCK</app-button>
     <app-button [color]="'warning'">SET PASSWORD</app-button>
     <app-button [color]="'primary'">SAVE</app-button>
   </div>

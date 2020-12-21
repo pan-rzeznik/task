@@ -17,6 +17,11 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'user-edit',
+      },
+      {
         path: 'users-list',
         component: UsersListComponent,
       },
