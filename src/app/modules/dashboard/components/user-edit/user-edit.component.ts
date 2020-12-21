@@ -2,11 +2,10 @@ import {
   Component,
   ChangeDetectionStrategy,
   ViewChild,
-  EventEmitter,
   Renderer2,
   OnInit,
 } from '@angular/core';
-import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-user-edit',
@@ -15,7 +14,8 @@ import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserEditComponent implements OnInit {
-  tableContent = ['Script', 'Props', 'Scenes', 'Money', 'Stunts'];
+  private tableContent = ['Script', 'Props', 'Scenes', 'Money', 'Stunts'];
+  tableFormArray = new FormArray([]);
   form: FormGroup;
 
   @ViewChild('form') formElement: HTMLFormElement;
@@ -33,6 +33,7 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+    this.initTableFormArray();
   }
 
   submitForm(): void {
@@ -54,6 +55,17 @@ export class UserEditComponent implements OnInit {
     fakeSubmit.click();
     listener();
     this.renderer.removeChild(this.formElement['nativeElement'], fakeSubmit);
+  }
+
+  private initTableFormArray(): void {
+    this.tableContent.forEach((e) => {
+      this.tableFormArray.push(
+        this.fb.group({
+          name: e,
+          state: false,
+        })
+      );
+    });
   }
 
   private initForm(): void {
