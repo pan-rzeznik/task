@@ -1,3 +1,4 @@
+import { FormModule } from './../form/form.module';
 import { PermmisionsComponent } from './components/permmisions/permmisions.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
@@ -11,7 +12,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule, DashboardRoutingModule, SharedModule],
+  imports: [CommonModule, DashboardRoutingModule, SharedModule, FormModule],
   declarations: [
     DashboardComponent,
     SidenavComponent,

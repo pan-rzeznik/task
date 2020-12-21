@@ -1,0 +1,6 @@
+<div class="control-box">
+  <label [for]="label" [ngClass]="{ 'input-active': smallLabel }">
+    {{ label }}
+  </label>
+  <input [formControl]="formControl" type="text" [id]="label" #input />
+</div>

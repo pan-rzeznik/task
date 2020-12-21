@@ -7,7 +7,7 @@
     <app-button [color]="'delete'">DELETE</app-button>
     <app-button [color]="'block'">BLOCK</app-button>
     <app-button [color]="'warning'">SET PASSWORD</app-button>
-    <app-button [color]="'primary'">SAVE</app-button>
+    <app-button [color]="'primary'" (click)="submitForm()">SAVE</app-button>
   </div>
 </header>
 
@@ -43,5 +43,64 @@
         </div>
       </div>
     </app-tab-body>
+  </app-tab>
+  <app-tab>
+    <app-tab-body [label]="'Statistics'">
+      <div class="tab-container">
+        <form #form>
+          <div class="personal">
+            <p>Personal Data</p>
+            <div class="form-controls">
+              <app-text-control
+                [label]="'Name'"
+                [formControl]="personal.get('name')"
+              ></app-text-control>
+              <div class="img-control">
+                <img src="../../../../../assets/icons/Combined Shape.svg" />
+                <p class="title-line">Upload Photo</p>
+                <p class="description-line">
+                  Drag and Drop photo or select from files
+                </p>
+              </div>
+              <app-text-control
+                [label]="'Last name'"
+                [formControl]="personal.get('lastName')"
+              ></app-text-control>
+              <app-text-control
+                [label]="'Birthdate'"
+                [formControl]="personal.get('birthdate')"
+              ></app-text-control>
+              <app-text-control
+                [label]="'Citizenship'"
+                [formControl]="personal.get('citizenship')"
+              ></app-text-control>
+            </div>
+          </div>
+          <span class="break-line"></span>
+          <div class="contact">
+            <p>Contact Information</p>
+            <div class="form-controls">
+              <app-text-control
+                [label]="'Instagram'"
+                [formControl]="contact.get('instagram')"
+              ></app-text-control>
+              <app-text-control
+                [label]="'Email'"
+                [formControl]="contact.get('email')"
+              ></app-text-control>
+              <app-text-control
+                [label]="'Twitter'"
+                [formControl]="contact.get('twitter')"
+              ></app-text-control>
+              <app-text-control
+                [label]="'Facebook'"
+                [formControl]="contact.get('facebook')"
+              ></app-text-control>
+            </div>
+          </div>
+        </form>
+      </div>
+    </app-tab-body>
+    <app-tab-body [label]="'Settings'"> </app-tab-body>
   </app-tab>
 </div>
