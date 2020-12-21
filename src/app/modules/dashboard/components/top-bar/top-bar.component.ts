@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 export enum SidenavState {
   open = 1,
@@ -8,6 +14,7 @@ export enum SidenavState {
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopBarComponent {
   sidenavSate = SidenavState.open;

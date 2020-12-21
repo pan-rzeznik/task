@@ -1,4 +1,7 @@
-<app-sidenav *ngIf="sidenavSate === sidenavSateEnum.open"></app-sidenav>
+<app-sidenav
+  *ngIf="sidenavSate === sidenavSateEnum.open"
+  @sidenavAnimation
+></app-sidenav>
 
 <section class="dashboard-content">
   <app-top-bar (sidenavToggle)="sidenavToggle()"></app-top-bar>

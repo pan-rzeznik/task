@@ -3,15 +3,17 @@ import {
   Component,
   ContentChildren,
   QueryList,
-  ElementRef,
+  ChangeDetectionStrategy,
+  AfterContentInit,
 } from '@angular/core';
 
 @Component({
   selector: 'app-tab',
   templateUrl: './tab.component.html',
   styleUrls: ['./tab.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TabComponent {
+export class TabComponent implements AfterContentInit {
   activeIndex = 0;
   labels: any;
 
@@ -27,9 +29,9 @@ export class TabComponent {
     this.activeIndex = index;
     if (tabs.length > 0) {
       tabs.forEach((tab: TabBodyComponent) => {
-        tab.tabVisible = false;
+        tab.changeTabVisibility(false);
       });
-      tabs[this.activeIndex].tabVisible = true;
+      tabs[this.activeIndex].changeTabVisibility(true);
     }
   }
 
@@ -43,7 +45,7 @@ export class TabComponent {
     const tabs = this.tabs['_results'] as TabBodyComponent[];
     for (let index = 0; index < tabs.length; index++) {
       if (!tabs[index].disabled) {
-        tabs[index].tabVisible = true;
+        tabs[index].changeTabVisibility(true);
         this.activeIndex = index;
         break;
       }
