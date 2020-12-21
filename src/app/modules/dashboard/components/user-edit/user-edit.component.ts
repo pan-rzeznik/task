@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './user-edit.component.html',
   styleUrls: ['./user-edit.component.scss'],
 })
-export class UserEditComponent {}
+export class UserEditComponent {
+  tableContent = ['Script', 'Props', 'Scenes', 'Money', 'Stunts'];
+}

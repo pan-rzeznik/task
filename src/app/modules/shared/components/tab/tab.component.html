@@ -1,0 +1,16 @@
+<div class="tab-panel">
+  <div class="tab-labels">
+    <button
+      class="label"
+      [disabled]="l.disabled"
+      *ngFor="let l of labels; let i = index"
+      [ngClass]="{ 'label--active': activeIndex === i }"
+      (click)="changeTab(i)"
+    >
+      {{ l.label }}
+    </button>
+  </div>
+  <div class="tab-body">
+    <ng-content></ng-content>
+  </div>
+</div>

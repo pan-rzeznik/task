@@ -1,4 +1,47 @@
-<app-button [color]="'delete'">DELETE</app-button>
-<app-button [color]="'block'">BLOCK</app-button>
-<app-button [color]="'warning'">SET PASSWORD</app-button>
-<app-button [color]="'primary'">SAVE</app-button>
+<header class="header">
+  <div class="text-container">
+    <p class="breadcrumbs">Users / User Edit</p>
+    <p class="user">Hugh Jackman</p>
+  </div>
+  <div class="buttons-container">
+    <app-button [color]="'delete'">DELETE</app-button>
+    <app-button [color]="'block'">BLOCK</app-button>
+    <app-button [color]="'warning'">SET PASSWORD</app-button>
+    <app-button [color]="'primary'">SAVE</app-button>
+  </div>
+</header>
+
+<div class="container">
+  <app-tab>
+    <app-tab-body [label]="'Logs'" [disabled]="true"></app-tab-body>
+    <app-tab-body [label]="'Permissions'">
+      <div class="tab-container">
+        <header>
+          <span class="role">Role: </span>
+          <span class="type">Performer</span>
+        </header>
+        <div class="table-section">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Object</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of tableContent">
+                <td>{{ row }}</td>
+                <td>
+                  <button class="table-button btn-create">Create</button
+                  ><button class="table-button btn-read">Read</button
+                  ><button class="table-button btn-update">Update</button
+                  ><button class="table-button btn-delete">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </app-tab-body>
+  </app-tab>
+</div>
