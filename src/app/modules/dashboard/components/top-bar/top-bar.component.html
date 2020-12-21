@@ -1,7 +1,13 @@
 <div class="top-bar">
   <div class="data">
-    <button class="sidenav-button" (click)="toggleSidenav()">
-      <img src="../../../../../assets/icons/menu.svg" />
+    <button
+      class="sidenav-button"
+      [ngClass]="{
+        'sidenav-button--open': sidenavSate === sidenavStateEnum.open
+      }"
+      (click)="toggleSidenav()"
+    >
+      <span class="bar"></span>
     </button>
     <div class="data-box">
       <p class="name">ACTIVE</p>

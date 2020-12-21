@@ -17,7 +17,8 @@ export enum SidenavState {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopBarComponent {
-  sidenavSate = SidenavState.open;
+  sidenavSate = SidenavState.close;
+  sidenavStateEnum = SidenavState;
   @Output() sidenavToggle = new EventEmitter<SidenavState>();
 
   constructor() {}
