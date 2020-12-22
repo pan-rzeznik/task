@@ -20,27 +20,10 @@
           <span class="role">Role: </span>
           <span class="type">Performer</span>
         </header>
-        <div class="table-section">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Object</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let row of tableFormArray.value">
-                <td>{{ row.name }}</td>
-                <td>
-                  <button class="table-button btn-create">Create</button
-                  ><button class="table-button btn-read">Read</button
-                  ><button class="table-button btn-update">Update</button
-                  ><button class="table-button btn-delete">Delete</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <app-table
+          [tableData]="tableData"
+          [tableColumns]="tableColumns"
+        ></app-table>
       </div>
     </app-tab-body>
   </app-tab>

@@ -5,8 +5,21 @@ import {
   Renderer2,
   OnInit,
 } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { TableObject } from 'src/app/modules/shared/components/table/table.component';
 
+const mockData: TableObject[] = [
+  {
+    rowName: 'Movies',
+    nestedRows: [
+      { name: 'Script', state: false },
+      { name: 'Props', state: false },
+      { name: 'Scenes', state: false },
+      { name: 'Money', state: false },
+      { name: 'Stunts', state: false },
+    ],
+  },
+];
 @Component({
   selector: 'app-user-edit',
   templateUrl: './user-edit.component.html',
@@ -14,8 +27,8 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserEditComponent implements OnInit {
-  private tableContent = ['Script', 'Props', 'Scenes', 'Money', 'Stunts'];
-  tableFormArray = new FormArray([]);
+  tableData = mockData;
+  tableColumns = ['Object', 'Action'];
   form: FormGroup;
 
   @ViewChild('form') formElement: HTMLFormElement;
@@ -33,7 +46,6 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    this.initTableFormArray();
   }
 
   submitForm(): void {
@@ -55,17 +67,6 @@ export class UserEditComponent implements OnInit {
     fakeSubmit.click();
     listener();
     this.renderer.removeChild(this.formElement['nativeElement'], fakeSubmit);
-  }
-
-  private initTableFormArray(): void {
-    this.tableContent.forEach((e) => {
-      this.tableFormArray.push(
-        this.fb.group({
-          name: e,
-          state: false,
-        })
-      );
-    });
   }
 
   private initForm(): void {

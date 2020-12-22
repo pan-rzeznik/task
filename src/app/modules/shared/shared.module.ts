@@ -1,3 +1,4 @@
+import { TableComponent } from './components/table/table.component';
 import { TabBodyComponent } from './components/tab-body/tab-body.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,7 +7,12 @@ import { TabComponent } from './components/tab/tab.component';
 
 @NgModule({
   imports: [CommonModule],
-  exports: [ButtonComponent, TabComponent, TabBodyComponent],
-  declarations: [ButtonComponent, TabComponent, TabBodyComponent],
+  exports: [ButtonComponent, TabComponent, TabBodyComponent, TableComponent],
+  declarations: [
+    ButtonComponent,
+    TabComponent,
+    TabBodyComponent,
+    TableComponent,
+  ],
 })
 export class SharedModule {}

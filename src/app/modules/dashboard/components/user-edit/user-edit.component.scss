@@ -44,47 +44,6 @@
   }
   .table-section {
     margin-top: 40px;
-    .table {
-      border-collapse: collapse;
-      width: 100%;
-
-      thead tr,
-      tbody tr {
-        text-align: left;
-        font-size: 12px;
-        font-weight: 500;
-        height: 50px;
-        border-top: 1px solid #ced3db;
-        border-bottom: 1px solid #ced3db;
-      }
-
-      th,
-      td {
-        padding-left: 35px;
-      }
-      .table-button {
-        height: 26px;
-        border-radius: 2px;
-        font-size: 11px;
-        color: #252629;
-        margin-right: 5px;
-        padding: 5px 20px;
-        cursor: pointer;
-      }
-
-      .btn-create {
-        background-color: #dbdde0;
-      }
-      .btn-read {
-        background-color: #5e92fc;
-      }
-      .btn-update {
-        background-color: #fabb2b;
-      }
-      .btn-delete {
-        background-color: #e5322c;
-      }
-    }
   }
   .personal {
     margin-bottom: 20px;

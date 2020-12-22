@@ -1,0 +1,27 @@
+<div class="table">
+  <div class="table-header">
+    <span class="column" *ngFor="let column of tableColumns">{{ column }}</span>
+  </div>
+  <div class="table-body">
+    <details *ngFor="let row of dataSource?.controls">
+      <summary class="table-row">{{ row.get("rowName")?.value }}</summary>
+      <div
+        *ngFor="let nestedRow of row.get('nestedRows')?.controls"
+        class="table-row-expanded"
+      >
+        <p>{{ nestedRow.get("name").value }}</p>
+        <div class="buttons">
+          <button
+            (click)="toggleState(nestedRow.get('state'))"
+            class="table-button btn-create"
+          >
+            Create
+          </button>
+          <button class="table-button btn-read">Read</button>
+          <button class="table-button btn-update">Update</button>
+          <button class="table-button btn-delete">Delete</button>
+        </div>
+      </div>
+    </details>
+  </div>
+</div>
