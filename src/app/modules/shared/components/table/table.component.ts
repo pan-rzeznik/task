@@ -1,9 +1,4 @@
-import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { FormArray, FormBuilder, AbstractControl } from '@angular/forms';
 
 export interface TableObject {
@@ -32,7 +27,6 @@ export class TableComponent {
         })
       );
     });
-    console.log(this.dataSource);
   }
   @Input() tableColumns: string[];
   constructor(private readonly fb: FormBuilder) {}
