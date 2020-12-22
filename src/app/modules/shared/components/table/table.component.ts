@@ -36,11 +36,6 @@ export class TableComponent {
   }
   @Input() tableColumns: string[];
   constructor(private readonly fb: FormBuilder) {}
-
-  toggleState(control: AbstractControl): void {
-    const state = control?.value;
-    control.setValue(!state);
-  }
   private createNestedFormArray(nestedRows: any[]): FormArray {
     const array = new FormArray([]);
     nestedRows.forEach((o) => {

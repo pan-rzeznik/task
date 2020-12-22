@@ -11,12 +11,7 @@
       >
         <p>{{ nestedRow.get("name").value }}</p>
         <div class="buttons">
-          <button
-            (click)="toggleState(nestedRow.get('state'))"
-            class="table-button btn-create"
-          >
-            Create
-          </button>
+          <button class="table-button btn-create">Create</button>
           <button class="table-button btn-read">Read</button>
           <button class="table-button btn-update">Update</button>
           <button class="table-button btn-delete">Delete</button>
