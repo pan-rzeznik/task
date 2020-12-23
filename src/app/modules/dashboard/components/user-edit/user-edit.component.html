@@ -17,8 +17,17 @@
     <app-tab-body [label]="'Permissions'">
       <div class="tab-container">
         <header>
-          <span class="role">Role: </span>
-          <span class="type">Performer</span>
+          <div class="role-name">
+            <span class="role">Role: </span>
+            <span class="type">Performer</span>
+          </div>
+          <app-multi-select-control
+            class="role-select"
+            [label]="'Asign Role'"
+            [formControl]="roleControl"
+            [dataSource]="roleDataSource"
+            [displayProperty]="'role'"
+          ></app-multi-select-control>
         </header>
         <app-table
           [tableData]="tableData"
@@ -53,10 +62,12 @@
                 [label]="'Birthdate'"
                 [formControl]="personal.get('birthdate')"
               ></app-text-control>
-              <app-text-control
+              <app-multi-select-control
                 [label]="'Citizenship'"
                 [formControl]="personal.get('citizenship')"
-              ></app-text-control>
+                [dataSource]="dataSource"
+                [displayProperty]="'name'"
+              ></app-multi-select-control>
             </div>
           </div>
           <span class="break-line"></span>
@@ -84,6 +95,8 @@
         </form>
       </div>
     </app-tab-body>
-    <app-tab-body [label]="'Settings'"> </app-tab-body>
+    <app-tab-body [label]="'Settings'">
+      <div class="tab-container"></div>
+    </app-tab-body>
   </app-tab>
 </div>

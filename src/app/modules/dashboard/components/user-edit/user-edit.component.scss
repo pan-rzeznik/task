@@ -33,7 +33,10 @@
   .tab-container {
     padding: 24px 16px;
     header {
-      margin-bottom: 40px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
   }
   .role {
@@ -44,6 +47,9 @@
     font-size: 16px;
     font-weight: 500;
     color: #5e92fc;
+  }
+  .role-select {
+    width: 40%;
   }
   .personal {
     margin-bottom: 20px;

@@ -1,0 +1,35 @@
+<div class="control-box">
+  <label [for]="label" [ngClass]="{ 'input-active': labelUp }">
+    {{ label }}
+  </label>
+  <input
+    [id]="label"
+    (click)="openPopoupWithOptions($event)"
+    (keyup)="filter($event)"
+    autocomplete="off"
+    type="text"
+    #input
+  />
+  <div class="options-container" *ngIf="optionsOpen">
+    <div
+      @optionFadeInOut
+      class="option"
+      [ngClass]="{ 'selected-option': checkIfSelected(option) }"
+      (click)="toggleOptionState(i)"
+      *ngFor="let option of filteredData; let i = index"
+    >
+      <p>{{ option[displayProperty] }}</p>
+      <img src="../../../../../assets/icons/check-solid.svg" />
+    </div>
+    <p class="option" *ngIf="filteredData.length === 0">
+      {{ emptyPlaceholder }}
+    </p>
+  </div>
+  <div class="chips-container">
+    <div class="chips" *ngFor="let chips of value; let i = index">
+      {{ chips[displayProperty] }}
+      <span class="close-button" (click)="removeChips($event, i)">x</span>
+    </div>
+  </div>
+  <span class="arrow" (click)="openPopoupWithOptions($event)"></span>
+</div>

@@ -5,7 +5,7 @@ import {
   Renderer2,
   OnInit,
 } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { TableObject } from 'src/app/modules/shared/components/table/table.component';
 
 const mockData: TableObject[] = [
@@ -30,7 +30,20 @@ export class UserEditComponent implements OnInit {
   tableData = mockData;
   tableColumns = ['Object', 'Action'];
   form: FormGroup;
-
+  roleControl = new FormControl([{ id: 1, role: 'Developer', salary: 1000 }]);
+  dataSource = [
+    { id: 1, name: 'Polska' },
+    { id: 2, name: 'Niemcy' },
+    { id: 3, name: 'Ukraina' },
+    { id: 4, name: 'Rosja' },
+  ];
+  roleDataSource = [
+    { id: 1, role: 'Developer', salary: 1000 },
+    { id: 2, role: 'Designer', salary: 999 },
+    { id: 3, role: 'Menager', salary: 1001 },
+    { id: 4, role: 'CEO', salary: 1002 },
+    { id: 5, role: 'Tester', salary: 998 },
+  ];
   @ViewChild('form') formElement: HTMLFormElement;
   constructor(
     private readonly fb: FormBuilder,
@@ -75,7 +88,10 @@ export class UserEditComponent implements OnInit {
         name: '',
         lastName: '',
         birthdate: '',
-        citizenship: '',
+        citizenship: new FormControl([
+          { id: 1, name: 'Polska' },
+          { id: 2, name: 'Niemcy' },
+        ]),
         photo: '',
       }),
       contact: this.fb.group({
