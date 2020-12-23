@@ -23,7 +23,7 @@ export class TableComponent {
       this.dataSource.push(
         this.fb.group({
           rowName: obj.rowName,
-          nestedRows: this.createNestedFormArray(obj.nestedRows),
+          nestedRows: this.createNestedFormArray(obj.nestedRows) as FormArray,
         })
       );
     });
@@ -31,9 +31,14 @@ export class TableComponent {
   @Input() tableColumns: string[];
   constructor(private readonly fb: FormBuilder) {}
 
-  toggleState(control: AbstractControl): void {
+  // Fix for type checking in template
+  getNestedControls(row: AbstractControl | null): AbstractControl[] {
+    return (row?.get('nestedRows') as FormArray)?.controls;
+  }
+
+  toggleState(control: AbstractControl | null): void {
     const state = control?.value;
-    control.setValue(!state);
+    control?.setValue(!state);
   }
   private createNestedFormArray(nestedRows: any[]): FormArray {
     const array = new FormArray([]);
