@@ -32,10 +32,16 @@ export class TableComponent {
         })
       );
     });
-    console.log(this.dataSource);
   }
   @Input() tableColumns: string[];
+
   constructor(private readonly fb: FormBuilder) {}
+
+  // Fix for type checking in template
+  getNestedControls(row: AbstractControl | null): AbstractControl[] {
+    return (row?.get('nestedRows') as FormArray)?.controls;
+  }
+
   private createNestedFormArray(nestedRows: any[]): FormArray {
     const array = new FormArray([]);
     nestedRows.forEach((o) => {
